@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class User {
+        constructor(name) {
+            this.name = name;
+        }
+        sayHi() {
+            console.log(this.name);
+        }
+        static createGuest(user="Гость") {
+            return new User(user, "Сайта");
+        }
+    }
+    // let user =User.createGuest();
+    // console.log(user.name);
+    //
+    //
+    // let user2 = new User("Iaroslav");
+    // user2.sayHi();
+
+    let user3 =User.createGuest("bla");
+    console.log(user3.name);
+
+
+
+    // --------------------------------------
+    // for create const
+    class Menu {
+        static get elemClass() {
+            return "menu"
+        }
+    }
+
+    alert( Menu.elemClass ); // menu
+</script>
+</body>
+</html>

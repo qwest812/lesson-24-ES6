@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let student = {
+        age: 22,
+        fullName: {
+            firstName: "John",
+            lastName: "Doe",
+        },
+        marks: [
+            {subject: "Math", score: 4},
+            {subject: "English", score: 3}
+        ]
+    };
+
+
+    function getAge({age}) {
+        console.log(age);
+    }
+
+
+    function whoIs({fullName: {firstName: name}}) {
+        console.log("firstname: " + name);
+    }
+
+    getAge(student);
+    whoIs(student);
+
+
+    // for (let {age:a, fullName:{firstName:f}} of student){
+    //     console.log("student" + f + "is " + a);
+    // }
+
+
+
+    let {marks:[{subject:name}]}=student;
+    console.log(name);
+</script>
+</body>
+</html>

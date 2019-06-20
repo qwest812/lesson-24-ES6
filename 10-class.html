@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://learn.javascript.ru/es-class-->
+<!--Новая конструкция class – удобный «синтаксический сахар» для задания конструктора вместе с прототипом.-->
+<script>
+    'use strict';
+
+    class User {
+
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHi() {
+            console.log(this.name);
+        }
+
+    }
+
+    let user = new User("Вася");
+    console.log(user);
+    user.sayHi(); // Вася
+
+</script>
+<pre>
+    Но при объявлении через class есть и ряд отличий:
+
+User нельзя вызывать без new, будет ошибка.
+Объявление класса с точки зрения области видимости ведёт себя как let. В частности, оно видно только в текущем блоке и только в коде, который находится ниже объявления (Function Declaration видно и до объявления).
+Методы, объявленные внутри class, также имеют ряд особенностей:
+
+Метод sayHi является именно методом, то есть имеет доступ к super.
+Все методы класса работают в строгом режиме use strict, даже если он не указан.
+Все методы класса не перечислимы. То есть в цикле for..in по объекту их не будет.
+Class Expression
+</pre>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вложеность</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let options = {
+        size: {
+            width: 100,
+            height: 200
+        },
+        items: ["Пончик", "Пирожное"]
+    };
+
+    let { title="Меню", size: {width, height}, items: [item1, item2] } = options;
+
+    // Меню 100 200 Пончик Пирожное
+    alert(title);  // Меню
+    alert(width);  // 100
+    alert(height); // 200
+    alert(item1);  // Пончик
+    alert(item2);  // Пирожное
+</script>
+</body>
+</html>

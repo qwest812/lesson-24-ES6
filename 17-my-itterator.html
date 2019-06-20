@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--https://learn.javascript.ru/iterator-->
+</head>
+<body>
+<script>
+    let range={
+        from:1,
+        to:5,
+    };
+    range[Symbol.iterator]=function () {
+      let currentNumber =this.from;
+      let lastNumber =this.to;
+      // возвращает бьект с меодом next
+        return{
+            next(){
+                if(currentNumber<=lastNumber){
+                    return{
+                        done:false,
+                        value:currentNumber++,
+                    }
+                }else {
+                    return{
+                        done:true,
+                    }
+                }
+            }
+        }
+    };
+
+    for (v of range){
+        console.log(v);
+    }
+</script>
+</body>
+</html>

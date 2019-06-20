@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    class Animal{
+        constructor(name){
+            this.name=name;
+        }
+
+        walk(){
+            console.log("I am" + this.name);
+        }
+    }
+
+    class Tiger extends Animal{
+        walk(){
+            super.walk();
+            console.log("run run");
+        }
+    }
+    new Tiger("Val").walk();
+
+
+    // ----------------------------------------
+
+
+    class Animal{
+        constructor(name){
+            this.name=name;
+        }
+
+        walk(){
+            console.log("I am" + this.name);
+        }
+    }
+
+    class Tiger extends Animal{
+
+        constructor(){
+            super("VVVV");
+        }
+        walk(){
+            super.walk();
+            console.log("run run");
+        }
+    }
+    new Tiger().walk();
+
+    // Вызвать конструктор родителя можно только изнутри конструктора потомка. В частности, super() нельзя вызвать из произвольного метода.
+        // В конструкторе потомка мы обязаны вызвать super() до обращения к this. До вызова super не существует this, так как по спецификации в этом случае именно super инициализирует this.
+</script>
+</body>
+</html>

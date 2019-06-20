@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let options = {
+        title: "Меню",
+        width: 100,
+        height: 200
+    };
+
+    let {title:t, width, height, boo="example"} = options;
+
+
+    console.log(t);
+    console.log(width);
+    console.log(height);
+    console.log(boo);
+
+
+    console.log("-------------");
+
+    let myOptions = {
+        title: "Меню",
+        width: 100,
+        height: 200
+    };
+
+    let {title, ...size} = myOptions;
+
+    console.log(title);
+    console.log(size);
+</script>
+</body>
+</html>

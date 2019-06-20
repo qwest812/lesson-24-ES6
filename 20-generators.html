@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://learn.javascript.ru/generator-->
+<!--Генераторы – новый вид функций в современном JavaScript. Они отличаются от обычных тем, что могут приостанавливать своё выполнение, возвращать промежуточный результат и далее возобновлять его позже, в произвольный момент времени.-->
+
+
+<script>
+    function* generateSequence() {
+        yield 1;
+        yield 2;
+        return 3;// return  won't show value/ Instead use yield
+    }
+
+    let generator = generateSequence();
+    console.log(generator);
+    console.log(generator.next());
+    console.log(generator.next());
+    console.log(generator.next());
+    console.log(generator.next());
+
+let generator2=generateSequence();
+    for (v of generator2){
+        console.log(v);
+    }
+
+    // function* f() {
+    //     звёздочка после function
+    // }
+    //
+    // function *f() {
+    //     звёздочка перед названием
+    // }
+</script>
+
+</body>
+</html>

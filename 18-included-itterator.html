@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let str = "Hello";
+
+    // Делает то же, что и
+    // for (var letter of str) alert(letter);
+
+    let iterator = str[Symbol.iterator]();
+
+    while(true) {
+        let result = iterator.next();
+        if (result.done) break;
+        alert(result.value); // Выведет все буквы по очереди
+    }
+</script>
+<pre>Итератор – объект, предназначенный для перебора другого объекта.
+У итератора должен быть метод next(), возвращающий объект {done: Boolean, value: any}, где value – очередное значение, а done: true в конце.
+Метод Symbol.iterator предназначен для получения итератора из объекта. Цикл for..of делает это автоматически, но можно и вызвать его напрямую.
+В современном стандарте есть много мест, где вместо массива используются более абстрактные «итерируемые» (со свойством Symbol.iterator) объекты, например оператор spread ....
+Встроенные объекты, такие как массивы и строки, являются итерируемыми, в соответствии с описанным выше.</pre>
+</body>
+</html>

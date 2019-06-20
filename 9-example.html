@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Реализовать два произвольных метода деструктуризации для массива и объекта.-->
+<script>
+let arr =["first", "second","third"];
+
+let obj={
+    name:"Iaroslav",
+    additionalnfo: {
+        age:111,
+        hight:200,
+        sex:"m"
+    },
+    address:"bla tto dood doos ",
+};
+
+
+
+function destructObj({name,additionalnfo:{age,hight,sex},address}) {
+    console.log(name);
+    console.log(age);
+    console.log(hight);
+    console.log(sex);
+    console.log(address);
+}
+destructObj(obj);
+
+
+function destructArray([one,two,three]) {
+    console.log(one);
+    console.log(two);
+    console.log(three);
+}
+destructArray(arr);
+</script>
+</body>
+</html>

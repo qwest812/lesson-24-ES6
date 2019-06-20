@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Деструкторизация</title>
+</head>
+<body>
+<script>
+    'use strict';
+    // При таком присвоении первое значение массива пойдёт в переменную firstName, второе – в lastName, а последующие (если есть) – будут отброшены.
+    let name =["Илья", "Кантор","Iaroslav", "Vadim"];
+    let animals =['rabbit','cow', "dog"];
+    let [firstName, lastName] = name;
+    name=animals;
+    console.log(name);
+
+
+    function example() {
+        return ['rabbit','cow', "dog"];
+    }
+
+    let[rabbit,cow,dog]=example();
+    console.log(rabbit);
+    // alert(firstName); // Илья
+    // alert(lastName);  // Кантор
+
+
+
+    let obj ={
+        a:1,
+        b:2,
+    };
+
+    let {a,b}=obj;
+    console.log(a);
+
+
+    let {a:one,b:two}=obj;
+    console.log(one);
+// -----------------------------------------------
+    let options = {
+        title: "Меню",
+        width: 100,
+        height: 200
+    };
+
+    let {title, width, height} = options;
+
+    alert(title);  // Меню
+    alert(width);  // 100
+    alert(height); // 200
+
+
+
+
+    // download module
+
+    // const {Module,main}= require (...)
+</script>
+</body>
+</html>
